@@ -46,4 +46,21 @@ exemplo: Carros > modelos
 
 18. Trata-se de um mecanismo que possibilita restringir o acesso a variáveis e métodos da classe (ou até a própria classe).
 
-19. 
+19. Permitir a todos acessarem um determinado atributo ou método
+
+20. Os membros da classe definidos como não podem ser acessados ou usados por nenhuma outra classe.
+    Impedir que ninguém consiga nodificar ou ler o atributo em questão
+
+21. Seria através dos modificadores de acesso
+
+22. Obter informações. Esse tipo de método sempre retorna um valor
+Exemplo: TextField trazNome = new TextField();
+         traznome.setText(nome.getText());
+
+23. Definir valores. Esse tipo de método geralmente não retorna valores
+Exemplo: TextField nome = new TextField();
+         nome.setText("FULANO");
+         
+24. O Nome da Clase; Os Atributos e os Métodos
+
+25. 
