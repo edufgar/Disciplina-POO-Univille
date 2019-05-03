@@ -30,7 +30,8 @@ exemplo: Carros > modelos
 12. Alternativa Certa 1.estaVazio
 
 13. É uma coisa, entidade, qualquer coisa que possa imaginar e que tenha uma identidade.
-    
+    Ele sxiste no momento que ele é instanciado na memória
+    Ele deixa de existir no momento em que ele é encerrado    
 
 14. Quando há a criação de um novo objeto
 
