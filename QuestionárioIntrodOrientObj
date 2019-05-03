@@ -1,0 +1,48 @@
+
+Questionário Introdução Orientação Objeto
+
+1. É uma coisa, entidade, qualquer coisa que possa imaginar
+e que tenha uma identidade.
+
+2. Caracteristicas Carro = Cor, Modelo, Marca
+   Comportamentos  Carro = Anda, Para, Abre a porta
+   
+3. Caracteristicas são consideradas atributos e Comportamentos são considerados métodos
+
+4. O POO tem por objetivo desenvolver software utilizando objetos de maneira cooperativa através de troca de mensagens
+
+5. A abstração na POO consiste em trabalhar um objeto dentro da programação se preocupando somente com suas principais propriedades,
+sem se apegar a pontos acidentais
+exemplo: Carros > modelos
+
+6. Encapsula características em comum de um grupo de objetos. Define os atributos e métodos que o objeto poderá possuir.
+
+7. Camelcase. Exemplo: CalculaDesconto()
+
+8. Alternativa Certa 4. CarroEletrico
+
+9. Camelcase. Exemplo: corExterna
+
+10. Alternativa Certa 3. corDeFundo
+
+11. Camelcase. Exemplo: corExterna
+
+12. Alternativa Certa 1.estaVazio
+
+13. É uma coisa, entidade, qualquer coisa que possa imaginar e que tenha uma identidade.
+    
+
+14. Quando há a criação de um novo objeto
+
+15. È um metodo especial ou operador especial utilizado para iniciar objetos
+    É ser utilizado para iniciar variáveis, instanciar outros objetos necessários, disparar métodos de inicialização.
+    O construtor deve possuir o mesmo nome da Classe
+    Classe NomeCarro construtor NomeCarro   
+
+16. O próprio compilador o cria
+
+17. Aluno p = new Aluno();
+
+18. Trata-se de um mecanismo que possibilita restringir o acesso a variáveis e métodos da classe (ou até a própria classe).
+
+19. 
