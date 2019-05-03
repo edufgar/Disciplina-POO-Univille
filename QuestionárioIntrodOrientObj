@@ -51,7 +51,10 @@ exemplo: Carros > modelos
 20. Os membros da classe definidos como não podem ser acessados ou usados por nenhuma outra classe.
     Impedir que ninguém consiga nodificar ou ler o atributo em questão
 
-21. Seria através dos modificadores de acesso
+21. É através dos modificadores de acesso
+public class Aluno{ 
+   private String matricula;
+}
 
 22. Obter informações. Esse tipo de método sempre retorna um valor
 Exemplo: TextField trazNome = new TextField();
@@ -63,4 +66,8 @@ Exemplo: TextField nome = new TextField();
          
 24. O Nome da Clase; Os Atributos e os Métodos
 
-25. 
+25. Camelcase com a primeira letra minuscula 
+
+26. Camelcase com a primeira letra minuscula 
+
+27. 
