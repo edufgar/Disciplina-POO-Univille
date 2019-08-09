@@ -1,0 +1,99 @@
+package br.univille.poo.programacaoestruturada.registro;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class HoraMinutoUtilTests {
+	
+	@Test
+	public void acrescentaMinutos() {
+		HoraMinuto h = new HoraMinuto();
+		h.hora = 10;
+		h.minuto = 0;
+		HoraMinutoUtil.acrescentaMinutos(h, 10);
+		assertEquals("Minutos deve ser 10",10,h.minuto);
+	}
+	
+	@Test
+	public void acrescentaMinutosEMudaHora() {
+		HoraMinuto h = new HoraMinuto();
+		h.hora = 10;
+		h.minuto = 55;
+		HoraMinutoUtil.acrescentaMinutos(h, 10);
+		assertEquals("Minutos deve ser 5",5,h.minuto);
+		assertEquals("Horas deve ser 11",11,h.hora);
+	}
+	
+	@Test
+	public void acrescentaMinutosEMudaHora70Min() {
+		HoraMinuto h = new HoraMinuto();
+		h.hora = 10;
+		h.minuto = 55;
+		HoraMinutoUtil.acrescentaMinutos(h, 70);
+		assertEquals("Minutos deve ser 5",5,h.minuto);
+		assertEquals("Horas deve ser 12",12,h.hora);
+	}
+		
+	@Test
+	public void acrescentaMinutosEMudaHoraMeiaNoite() {
+		HoraMinuto h = new HoraMinuto();
+		h.hora = 23;
+		h.minuto = 55;
+		HoraMinutoUtil.acrescentaMinutos(h, 10);
+		assertEquals("Minutos deve ser 5",5,h.minuto);
+		assertEquals("Horas deve ser 0",0,h.hora);
+	}
+	
+	@Test
+	public void retiraMinutos() {
+		HoraMinuto h = new HoraMinuto();
+		h.hora = 10;
+		h.minuto = 10;
+		HoraMinutoUtil.acrescentaMinutos(h, -10);
+		assertEquals("Minutos deve ser 0",0,h.minuto);
+	}
+	
+	@Test
+	public void retiraMinutos9Horas() {
+		HoraMinuto h = new HoraMinuto();
+		h.hora = 9;
+		h.minuto = 5;
+		HoraMinutoUtil.acrescentaMinutos(h, -10);
+		assertEquals("Minutos deve ser 55",55,h.minuto);
+		assertEquals("Horas deve ser 8",8,h.hora);
+	}
+	
+	@Test
+	public void retiraMinutosMudaHoras() {
+		HoraMinuto h = new HoraMinuto();
+		h.hora = 9;
+		h.minuto = 5;
+		HoraMinutoUtil.acrescentaMinutos(h, -70);
+		assertEquals("Minutos deve ser 55",55,h.minuto);
+		assertEquals("Horas deve ser 7",7,h.hora);
+	}
+	
+	@Test
+	public void retiraMinutosEMudaHoraMeiaNoite() {
+		HoraMinuto h = new HoraMinuto();
+		h.hora = 0;
+		h.minuto = 5;
+		HoraMinutoUtil.acrescentaMinutos(h, -10);
+		assertEquals("Minutos deve ser 55",55,h.minuto);
+		assertEquals("Horas deve ser 23",23,h.hora);
+	}
+	
+	@Test
+	public void comparaHoras() {
+		HoraMinuto h1 = new HoraMinuto();
+		HoraMinuto h2 = new HoraMinuto();
+		h1.minuto = 5;
+		h2.minuto = 5;
+		h1.hora = 11;
+		h2.hora = 11;
+		boolean verificar = HoraMinutoUtil.comparaHoras(h1,h2);
+		assertEquals("Horas e minutos devem ser iguais",true,verificar);
+
+	}
+}
