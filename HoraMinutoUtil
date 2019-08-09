@@ -1,0 +1,42 @@
+package br.univille.poo.programacaoestruturada.registro;
+
+public class HoraMinutoUtil {
+	
+
+	public static void acrescentaMinutos(HoraMinuto h, int minutos) {
+		
+		h.minuto = h.minuto+minutos;
+		
+		while (h.minuto > 60){
+			
+			h.minuto = h.minuto - 60;
+			h.hora = h.hora+1;
+			
+		}
+		
+		while (h.hora >= 24) {
+			
+			h.hora = h.hora-24;
+			
+		}
+		
+		while (h.minuto < 0){
+			
+			h.minuto = h.minuto + 60;
+			h.hora = h.hora-1;
+			
+		}
+		
+		while (h.hora < 0) {
+			
+			h.hora = h.hora+24;
+			
+		}
+	}
+	
+	public static boolean comparaHoras(HoraMinuto h1, HoraMinuto h2) {
+		return (h1.hora == h2.hora) && (h1.minuto == h2.minuto);
+	}
+	
+
+}
