@@ -3,15 +3,17 @@ create database trabjdbc
 use trabjdbc
 
 create TABLE  Tarefas (
-DataLimite date,
+CodigoTarefa int NOT NULL AUTO_INCREMENT,
+CodigoUsuario int,
 Descricao varchar(50),
-CodigoTarefa int PRIMARY KEY,
-CodigoUsuario int
+DataLimite date,
+CONSTRAINT Tarefas_pk PRIMARY KEY (CodigoTarefa)
 );
 
-CREATE TABLE Usuários (
+create TABLE Usuarios (
+CodigoUsuario int NOT NULL AUTO_INCREMENT,
 Usuario varchar(50),
-CodigoUsuario int PRIMARY KEY
+CONSTRAINT Usuarios_pk PRIMARY KEY (CodigoUsuario)
 );
 
-ALTER TABLE Tarefas ADD FOREIGN KEY(CodigoUsuario) REFERENCES Usuários (CodigoUsuario);
+ALTER TABLE Tarefas ADD FOREIGN KEY(CodigoUsuario) REFERENCES Usuarios (CodigoUsuario);
