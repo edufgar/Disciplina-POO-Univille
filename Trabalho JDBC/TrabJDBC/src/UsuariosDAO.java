@@ -1,102 +1,85 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UsuariosDAO extends BasicoDAO{
 
-	/**
-	 * Inserir uma nova pessoa
-	 * @param pessoa
-	 */
-	public void insert(Usuario usuario) {
+	public void insert(Usuarios usuario) {
 
-		String sql = " insert into usuario(nome, sobrenome) values(?,?)";
+		String sql = " insert into usuario(codigousuario, usuario) values(?,?)";
 		
 		try (Connection conn = getConnection();
 			 PreparedStatement statement = conn.prepareStatement(sql)){
-			statement.setString(1, pessoa.getNome());
-			statement.setString(2, pessoa.getSobrenome());
+			statement.setInt(1, usuario.getCodigousuario());
+			statement.setString(2, usuario.getUsuario());
 			statement.execute();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	/**
-	 * Deletar uma pessoa pelo id
-	 * @param pessoa
-	 */
-	public void delete(Pessoa pessoa) {
 		
-		String sql = " delete from pessoa where id = ?";
+	public void delete(Usuarios usuario) {
+		
+		String sql = " delete from usuario where codigousuario = ?";
 		
 		try(Connection conn = getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql)) {
-			statement.setInt(1, pessoa.getId());
+			statement.setInt(1, usuario.getCodigousuario());
 			statement.execute();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	/**
-	 * Atualizar uma pessoa pelo id
-	 * @param pessoa
-	 */
-	public void update(Pessoa pessoa) {
-		String sql = " update pessoa set nome = ?, sobrenome = ? where id = ?";
+	public void update(Usuarios usuario) {
+		String sql = " update usuario set codigousuario = ?, usuario = ? where codigousuario = ?";
 		
 		try (Connection conn = getConnection();
 			 PreparedStatement statement = conn.prepareStatement(sql)){
-			statement.setString(1, pessoa.getNome());
-			statement.setString(2, pessoa.getSobrenome());
-			statement.setInt(3, pessoa.getId());
+			statement.setInt(1, usuario.getCodigousuario());
+			statement.setString(2, usuario.getUsuario());
 			statement.execute();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	/**
-	 * Obter uma pessoa pelo id
-	 * @param id
-	 * @return
-	 */
-	public Pessoa getById(int id) {
-		Pessoa pessoa = null;
-		String sql = " select id, nome, sobrenome from pessoa where id = ?";
+	public Usuarios getByCodigousuario(int codigousuario) {
+		Usuarios usuario = null;
+		String sql = " select codigousuario, usuario from usuario where codigousuario = ?";
 		
 		try(Connection conn = getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql)) {
-			statement.setInt(1, id);
+			statement.setInt(1, codigousuario);
 			ResultSet resultSet = statement.executeQuery();
 			if(resultSet.next()) {
-				pessoa = new Pessoa();
-				pessoa.setId(resultSet.getInt(1));
-				pessoa.setNome(resultSet.getString(2));
-				pessoa.setSobrenome(resultSet.getString(3));
+				usuario = new Usuarios();
+				usuario.setCodigousuario(resultSet.getInt(1));
+				usuario.setUsuario(resultSet.getString(2));
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return pessoa;
+		return usuario;
 	}
 	
-	/**
-	 * Obter todas as pessoas da tabel
-	 * @return
-	 */
-	public List<Pessoa> getAll(){
-		List<Pessoa> list = new ArrayList<>();
-		String sql = " select id, nome, sobrenome from pessoa order by nome";
+	public List<Usuarios> getAll(){
+		List<Usuarios> list = new ArrayList<>();
+		String sql = " select codigousuario, usuario from usuario order by usuario";
 		
 		try(Connection conn = getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql)) {
 			ResultSet resultSet = statement.executeQuery();
 			while(resultSet.next()) {
-				Pessoa pessoa = new Pessoa();
-				pessoa.setId(resultSet.getInt(1));
-				pessoa.setNome(resultSet.getString(2));
-				pessoa.setSobrenome(resultSet.getString(3));
+				Usuarios usuario = new Usuarios();
+				usuario.setCodigousuario(resultSet.getInt(1));
+				usuario.setUsuario(resultSet.getString(2));
 				
-				list.add(pessoa);
+				
+				list.add(usuario);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
