@@ -13,10 +13,9 @@ public class UsuariosDAO extends BasicoDAO{
 		
 		try (Connection conn = getConnection();
 			 PreparedStatement statement = conn.prepareStatement(sql)){
-			statement.setInt(1, usuario.getCodigousuario());
-			statement.setString(2, usuario.getUsuario());
+			statement.setString(1, usuario.getUsuario());
 			statement.execute();
-		}catch(Exception e) {
+		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 	}
@@ -29,7 +28,7 @@ public class UsuariosDAO extends BasicoDAO{
 			PreparedStatement statement = conn.prepareStatement(sql)) {
 			statement.setInt(1, usuario.getCodigousuario());
 			statement.execute();
-		}catch(Exception e) {
+		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 	}
@@ -42,7 +41,7 @@ public class UsuariosDAO extends BasicoDAO{
 			statement.setInt(1, usuario.getCodigousuario());
 			statement.setString(2, usuario.getUsuario());
 			statement.execute();
-		}catch(Exception e) {
+		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 	}
@@ -60,7 +59,7 @@ public class UsuariosDAO extends BasicoDAO{
 				usuario.setCodigousuario(resultSet.getInt(1));
 				usuario.setUsuario(resultSet.getString(2));
 			}
-		}catch(Exception e) {
+		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 		return usuario;
@@ -81,7 +80,7 @@ public class UsuariosDAO extends BasicoDAO{
 				
 				list.add(usuario);
 			}
-		}catch(Exception e) {
+		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 		return list;
