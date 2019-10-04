@@ -16,7 +16,13 @@ public class Usuarios {
 	}
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
-	}		
+	}
+	@Override
+	public String toString() {
+		return "Usuarios [codigousuario=" + codigousuario + ", usuario=" + usuario + "]";
+	}
+	
+	
 	
 
 }

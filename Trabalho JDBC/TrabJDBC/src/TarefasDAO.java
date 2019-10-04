@@ -8,7 +8,7 @@ public class TarefasDAO extends BasicoDAO{
 	
 	public void insert(Tarefas tarefas) {
 
-		String sql = " insert into tarefas(codigousuario, descrição, datalimite) values(?,?,?)";
+		String sql = " insert into tarefas(codigousuario, descricao, datalimite) values(?,?,?)";
 		
 		try (Connection conn = getConnection();
 			 PreparedStatement statement = conn.prepareStatement(sql)){

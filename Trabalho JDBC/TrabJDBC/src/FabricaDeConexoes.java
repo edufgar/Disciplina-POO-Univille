@@ -1,3 +1,4 @@
+  
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -22,7 +23,7 @@ public class FabricaDeConexoes {
 	public Connection getConnection(){
 		try {
 		return DriverManager.getConnection(  
-				"jdbc:mysql://localhost:3306/"+banco,usuario,senha);
+				"jdbc:mysql://localhost:3306/"+banco+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",usuario,senha);
 		}catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

@@ -12,6 +12,7 @@ public class Main {
 		Tarefas t1 = new Tarefas();
 		t1.setDescricao("Teste");
 		t1.setDatalimite(new Date(21,12,2019));
+		t1.setCodigousuario(1);
 		
 		Usuarios u1 = new Usuarios();
 		u1.setUsuario("Fulano");
@@ -19,7 +20,7 @@ public class Main {
 		usuariodao.insert(u1);
 		tarefadao.insert(t1);
 		
-		System.out.println(tarefadao.getByCodigotarefa(1));
+		System.out.println(tarefadao.getByCodigotarefa(4));
 		
 		System.out.println(usuariodao.getByCodigousuario(1));
 		

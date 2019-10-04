@@ -31,7 +31,14 @@ public class Tarefas {
 	}
 	public void setDatalimite(Date datalimite) {
 		this.datalimite = datalimite;
+	}
+	@Override
+	public String toString() {
+		return "Tarefas [codigotarefa=" + codigotarefa + ", codigousuario=" + codigousuario + ", descricao=" + descricao
+				+ ", datalimite=" + datalimite + "]";
 	}	
+	
+	
 	
 
 }

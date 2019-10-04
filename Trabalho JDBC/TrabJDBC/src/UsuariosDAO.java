@@ -9,7 +9,7 @@ public class UsuariosDAO extends BasicoDAO{
 
 	public void insert(Usuarios usuario) {
 
-		String sql = " insert into usuario(codigousuario, usuario) values(?,?)";
+		String sql = " insert into usuarios(usuario) values(?)";
 		
 		try (Connection conn = getConnection();
 			 PreparedStatement statement = conn.prepareStatement(sql)){
@@ -48,7 +48,7 @@ public class UsuariosDAO extends BasicoDAO{
 	
 	public Usuarios getByCodigousuario(int codigousuario) {
 		Usuarios usuario = null;
-		String sql = " select codigousuario, usuario from usuario where codigousuario = ?";
+		String sql = " select codigousuario, usuario from usuarios where codigousuario = ?";
 		
 		try(Connection conn = getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql)) {
@@ -67,7 +67,7 @@ public class UsuariosDAO extends BasicoDAO{
 	
 	public List<Usuarios> getAll(){
 		List<Usuarios> list = new ArrayList<>();
-		String sql = " select codigousuario, usuario from usuario order by usuario";
+		String sql = " select codigousuario, usuario from usuarios order by usuario";
 		
 		try(Connection conn = getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql)) {
