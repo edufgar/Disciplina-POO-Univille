@@ -3,9 +3,11 @@ package Interface_Pontos_Cardeais;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -29,9 +31,28 @@ public class HelloSwing extends JFrame {
 		JPanel panelesq = new JPanel();
 		// Retira o gerenciador de Layout
 		// panelesq.setLayout(null);
-		panelesq.setBackground(Color.LIGHT_GRAY);
 		panelesq.setPreferredSize(new Dimension(350,550));
 		
+		JCheckBox checknorte = new JCheckBox();
+		checknorte.setText(" Norte!!");
+		checknorte.setFont(new Font("Arial", Font.PLAIN, 38));
+		
+		JCheckBox checksul = new JCheckBox();
+		checksul.setText(" Sul!!");
+		checksul.setFont(new Font("Arial", Font.PLAIN, 38));
+		
+		JCheckBox checkcentro = new JCheckBox();
+		checkcentro.setText(" Centro!!");
+		checkcentro.setFont(new Font("Arial", Font.PLAIN, 38));
+		
+		JCheckBox checkleste = new JCheckBox();
+		checkleste.setText(" Leste!!");
+		checkleste.setFont(new Font("Arial", Font.PLAIN, 38));
+		
+		JCheckBox checkoeste = new JCheckBox();
+		checkoeste.setText(" Oeste!!");
+		checkoeste.setFont(new Font("Arial", Font.PLAIN, 38));
+				
 		JPanel paneldir = new JPanel();
 		// Retira o gerenciador de Layout
 		//paneldir.setLayout(null);
@@ -63,6 +84,13 @@ public class HelloSwing extends JFrame {
 	root.add(paneldir);
 	
 	add(root);
+	panelesq.add(checknorte);
+	panelesq.add(checksul);
+	panelesq.add(checkcentro);
+	panelesq.add(checkleste);
+	panelesq.add(checkoeste);
+	
+	
 		
 	}
 	
