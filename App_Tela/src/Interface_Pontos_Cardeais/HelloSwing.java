@@ -3,10 +3,14 @@ package Interface_Pontos_Cardeais;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -28,7 +32,15 @@ public class HelloSwing extends JFrame {
 	}
 	
 	private void setLayout() {
+		
+		JPanel norte = criarPanel(Color.RED,"Norte");
+        JPanel leste = criarPanel(Color.YELLOW,"Leste");
+        JPanel oeste = criarPanel(Color.BLUE,"Oeste");
+        JPanel sul = criarPanel(Color.WHITE,"Sul");
+        JPanel centro = criarPanel(Color.GREEN,"Centro");
+		
 		JPanel panelesq = new JPanel();
+		panelesq.setBorder(BorderFactory.createEmptyBorder(150,220,0,100));
 		// Retira o gerenciador de Layout
 		// panelesq.setLayout(null);
 		panelesq.setPreferredSize(new Dimension(350,550));
@@ -36,34 +48,84 @@ public class HelloSwing extends JFrame {
 		JCheckBox checknorte = new JCheckBox();
 		checknorte.setText(" Norte!!");
 		checknorte.setFont(new Font("Arial", Font.PLAIN, 38));
+		checknorte.setPreferredSize(new Dimension(300,50));
+		checknorte.setSelected(true);
 		
 		JCheckBox checksul = new JCheckBox();
 		checksul.setText(" Sul!!");
 		checksul.setFont(new Font("Arial", Font.PLAIN, 38));
+		checksul.setPreferredSize(new Dimension(300,50));
+		checksul.setSelected(true);
 		
 		JCheckBox checkcentro = new JCheckBox();
 		checkcentro.setText(" Centro!!");
 		checkcentro.setFont(new Font("Arial", Font.PLAIN, 38));
+		checkcentro.setPreferredSize(new Dimension(300,50));
+		checkcentro.setSelected(true);
 		
 		JCheckBox checkleste = new JCheckBox();
 		checkleste.setText(" Leste!!");
 		checkleste.setFont(new Font("Arial", Font.PLAIN, 38));
+		checkleste.setPreferredSize(new Dimension(300,50));
+		checkleste.setSelected(true);
 		
 		JCheckBox checkoeste = new JCheckBox();
 		checkoeste.setText(" Oeste!!");
 		checkoeste.setFont(new Font("Arial", Font.PLAIN, 38));
+		checkoeste.setPreferredSize(new Dimension(300,50));
+		checkoeste.setSelected(true);
+		
+		checknorte.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				norte.setVisible(checknorte.isSelected());
 				
+			}
+		});
+		
+		checksul.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				sul.setVisible(checksul.isSelected());
+				
+			}
+		});
+		
+		checkcentro.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				centro.setVisible(checkcentro.isSelected());
+				
+			}
+		});
+		
+		checkleste.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				leste.setVisible(checkleste.isSelected());
+				
+			}
+		});
+		
+		checkoeste.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				oeste.setVisible(checkoeste.isSelected());
+				
+			}
+		});
+		
 		JPanel paneldir = new JPanel();
 		// Retira o gerenciador de Layout
 		//paneldir.setLayout(null);
 		paneldir.setPreferredSize(new Dimension(350,550));
 		paneldir.setLayout(new BorderLayout());
-		
-		JPanel norte = criarPanel(Color.RED,"Norte");
-        JPanel leste = criarPanel(Color.YELLOW,"Leste");
-        JPanel oeste = criarPanel(Color.BLUE,"Oeste");
-        JPanel sul = criarPanel(Color.WHITE,"Sul");
-        JPanel centro = criarPanel(Color.GREEN,"Centro");
+				
 		
 		// Adiciona o painel no norte
 		paneldir.add(norte, BorderLayout.NORTH);
