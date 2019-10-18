@@ -33,7 +33,7 @@ public class HelloSwing extends JFrame {
 	
 	private void setLayout() {
 		
-		JPanel norte = criarPanel(Color.RED,"Norte");
+	JPanel norte = criarPanel(Color.RED,"Norte");
         JPanel leste = criarPanel(Color.YELLOW,"Leste");
         JPanel oeste = criarPanel(Color.BLUE,"Oeste");
         JPanel sul = criarPanel(Color.WHITE,"Sul");
