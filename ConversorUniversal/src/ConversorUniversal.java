@@ -36,10 +36,10 @@ public class ConversorUniversal extends JFrame {
 		// Titulo Janela
 		setTitle("Conversor Universal");
 		// Tamanho Janela
-		setSize(600,450);
+		setSize(525,400);
 		// Configura local inicial
-		setLocation(1366/2 - 600/2,768/2 - 450/2);
-		// Não permite modificar o tamanho dsa Tela
+		setLocation(1366/2 - 525/2,768/2 - 400/2);
+		// NÃ£o permite modificar o tamanho dsa Tela
 		setResizable(false);
 		// Configura a tela
 		setLayout();
@@ -128,7 +128,7 @@ public class ConversorUniversal extends JFrame {
 		
 		JMenu menuajuda = new JMenu("Ajuda");
 		JMenuItem itemdesenvolvedores = new JMenuItem("Desenvolvedores",KeyEvent.VK_S);
-		JMenuItem itemgithub = new JMenuItem("Repositório do Github",KeyEvent.VK_S);
+		JMenuItem itemgithub = new JMenuItem("RepositÃ³rio do Github",KeyEvent.VK_S);
 		JMenuItem itemsobre = new JMenuItem("Sobre",KeyEvent.VK_S);
 		
 		
@@ -147,7 +147,6 @@ public class ConversorUniversal extends JFrame {
 		
 		// Adiciona o painel na janela
 		//add(painel);
-		
 		
 		show();		
 		
