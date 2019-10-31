@@ -22,7 +22,7 @@ public class HelloSwing extends JFrame{
 		setSize(450,275);
 		// Configura local inicial
 		setLocation(1366/2 - 450/2,768/2 - 275/2);
-		// NÃ£o permite modificar o tamanho dsa Tela
+		// Não permite modificar o tamanho dsa Tela
 		setResizable(false);
 		// Configura a tela
 		setLayout();
@@ -35,7 +35,7 @@ public class HelloSwing extends JFrame{
 		JPanel abamoedas = new JPanel();
 		abamoedas.setLayout(null);
 		
-		// InÃ­cio Bloco JComboBox Moeda Origem
+		// Início Bloco JComboBox Moeda Origem
 		
 		String nomemoedasorigem [] = {"Reais","Dolares","Euros"};
 				
@@ -45,7 +45,7 @@ public class HelloSwing extends JFrame{
 						
 		// Fim Bloco JComboBox Moeda Origem  
 		
-		// InÃ­cio Bloco JComboBox Moeda Destino
+		// Início Bloco JComboBox Moeda Destino
 				
 		String nomemoedasdestino [] = {"Reais","Dolares","Euros"};
 				

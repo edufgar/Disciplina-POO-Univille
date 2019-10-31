@@ -1,5 +1,4 @@
 
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -39,7 +38,7 @@ public class ConversorUniversal extends JFrame {
 		setSize(525,400);
 		// Configura local inicial
 		setLocation(1366/2 - 525/2,768/2 - 400/2);
-		// NÃ£o permite modificar o tamanho dsa Tela
+		// Não permite modificar o tamanho dsa Tela
 		setResizable(false);
 		// Configura a tela
 		setLayout();
@@ -128,7 +127,7 @@ public class ConversorUniversal extends JFrame {
 		
 		JMenu menuajuda = new JMenu("Ajuda");
 		JMenuItem itemdesenvolvedores = new JMenuItem("Desenvolvedores",KeyEvent.VK_S);
-		JMenuItem itemgithub = new JMenuItem("RepositÃ³rio do Github",KeyEvent.VK_S);
+		JMenuItem itemgithub = new JMenuItem("Repositório do Github",KeyEvent.VK_S);
 		JMenuItem itemsobre = new JMenuItem("Sobre",KeyEvent.VK_S);
 		
 		
