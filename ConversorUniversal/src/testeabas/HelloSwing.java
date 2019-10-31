@@ -22,7 +22,7 @@ public class HelloSwing extends JFrame{
 		setSize(450,275);
 		// Configura local inicial
 		setLocation(1366/2 - 450/2,768/2 - 275/2);
-		// Não permite modificar o tamanho dsa Tela
+		// NÃ£o permite modificar o tamanho dsa Tela
 		setResizable(false);
 		// Configura a tela
 		setLayout();
@@ -42,13 +42,13 @@ public class HelloSwing extends JFrame{
 		JTextField txtorigem = new JTextField(200);
 		txtorigem.setBounds(80, 125, 100, 30);
 		
-		// Início Bloco JComboBox Moeda Origem
+		// InÃ­cio Bloco JComboBox Moeda Origem
 			
 		JComboBox<String> moedaorigem = new JComboBox<String>();
 		// moedaorigem.setPreferredSize(tamanhoPreferido);
 		moedaorigem.setBounds(80, 65, 100, 30);
 		moedaorigem.addItem("Real");
-		moedaorigem.addItem("Dólar");
+		moedaorigem.addItem("DÃ³lar");
 		moedaorigem.addItem("Euro");
 		moedaorigem.setSelectedIndex(-1);
 		
@@ -68,14 +68,15 @@ public class HelloSwing extends JFrame{
 		
 		JTextField txtdestino = new JTextField(200);
 		txtdestino.setBounds(300, 125, 100, 30);
+		txtdestino.setEditable(false);
 		
-		// Início Bloco JComboBox Moeda Destino
+		// InÃ­cio Bloco JComboBox Moeda Destino
 		
 		JComboBox<String> moedadestino = new JComboBox<String>();
 		// moedaorigem.setPreferredSize(tamanhoPreferido);
 		moedadestino.setBounds(300, 65, 100, 30);
 		moedadestino.addItem("Real");
-		moedadestino.addItem("Dólar");
+		moedadestino.addItem("DÃ³lar");
 		moedadestino.addItem("Euro");
 		moedadestino.setSelectedIndex(-1);
 				
