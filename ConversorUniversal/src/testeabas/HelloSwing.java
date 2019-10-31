@@ -34,34 +34,55 @@ public class HelloSwing extends JFrame{
 		
 		JPanel abamoedas = new JPanel();
 		abamoedas.setLayout(null);
+		
+		// Início Bloco JComboBox Moeda Origem
+		
+		JLabel lblNISo = new JLabel("Nenhum Item selecionado");
+				
+		String nomemoedasorigem [] = {"Reais","Dolares","Euros"};
+				
+		JComboBox<String> moedaorigem = new JComboBox<String>(nomemoedasorigem);
+		moedaorigem.setBounds(80, 65, 100, 30);
+		moedaorigem.setSelectedIndex(-1);
+				
+		moedaorigem.addActionListener(new ActionListener() {
+				  
+			@Override 
+			public void actionPerformed(ActionEvent e) {					
+				lblNISo.setText("Selecionou : "+ moedaorigem.getSelectedItem());					
+			}
+					
+		});		
 						
+		// Fim Bloco JComboBox Moeda Origem  
+		
+		// Início Bloco JComboBox Moeda Destino
+		
+		JLabel lblNISd = new JLabel("Nenhum Item selecionado");
+				
+		String nomemoedasdestino [] = {"Reais","Dolares","Euros"};
+				
+		JComboBox<String> moedadestino = new JComboBox<String>(nomemoedasdestino);
+		moedadestino.setBounds(300, 65, 100, 30);
+		moedadestino.setSelectedIndex(-1);
+										
+		moedadestino.addActionListener(new ActionListener() {
+						  
+			@Override 
+			public void actionPerformed(ActionEvent e) {
+				lblNISd.setText("Selecionou : "+ moedadestino.getSelectedItem());
+			}
+					
+		});			
+							
+		// Fim Bloco JComboBox Moeda Destino 
+		
 		JLabel lblorigem = new JLabel("De: ");
 		lblorigem.setForeground(Color.BLACK);
 		lblorigem.setBounds(35, 65, 80, 30);
 		
 		JTextField txtorigem = new JTextField(200);
 		txtorigem.setBounds(80, 135, 100, 30);
-		
-		// Início Bloco JComboBox Moeda Origem
-			
-		JLabel lblNISo = new JLabel("Nenhum Item selecionado");
-		
-		String nomemoedasorigem [] = {"Reais","Dolares","Euros"};
-		
-		JComboBox<String> moedaorigem = new JComboBox<String>(nomemoedasorigem);
-		moedaorigem.setBounds(80, 65, 100, 30);
-		moedaorigem.setSelectedIndex(-1);
-		
-		moedaorigem.addActionListener(new ActionListener() {
-		  
-			@Override 
-			public void actionPerformed(ActionEvent e) {
-				lblNISo.setText("Selecionou : "+ moedaorigem.getSelectedItem());
-			}
-			
-		});		
-				
-		// Fim Bloco JComboBox Moeda Origem  
 		  
 		JLabel lbldestino = new JLabel("Para: ");
 		lbldestino.setForeground(Color.BLACK);
@@ -70,28 +91,7 @@ public class HelloSwing extends JFrame{
 		JTextField txtdestino = new JTextField(200);
 		txtdestino.setBounds(300, 135, 100, 30);
 		txtdestino.setEditable(false);
-		
-		// Início Bloco JComboBox Moeda Destino
-		
-		JLabel lblNISd = new JLabel("Nenhum Item selecionado");
-		
-		String nomemoedasdestino [] = {"Reais","Dolares","Euros"};
-		
-		JComboBox<String> moedadestino = new JComboBox<String>(nomemoedasdestino);
-		moedadestino.setBounds(300, 65, 100, 30);
-		moedadestino.setSelectedIndex(-1);
-								
-		moedadestino.addActionListener(new ActionListener() {
-				  
-			@Override 
-			public void actionPerformed(ActionEvent e) {
-				 lblNISd.setText("Selecionou : "+ moedadestino.getSelectedItem());
-			}
-			
-		});			
 					
-		// Fim Bloco JComboBox Moeda Destino  
-		
 		JButton bttnconverter = new JButton("Converter!!");
 		bttnconverter.setBounds(300, 185, 100, 30);
 		
