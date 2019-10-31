@@ -37,19 +37,19 @@ public class HelloSwing extends JFrame{
 		
 		// Início Bloco JComboBox Moeda Origem
 		
-		JLabel lblNISo = new JLabel("Nenhum Item selecionado");
+		JLabel lblAO = new JLabel("Nenhum Item selecionado");
 				
 		String nomemoedasorigem [] = {"Reais","Dolares","Euros"};
 				
-		JComboBox<String> moedaorigem = new JComboBox<String>(nomemoedasorigem);
-		moedaorigem.setBounds(80, 65, 100, 30);
-		moedaorigem.setSelectedIndex(-1);
+		JComboBox<String> comboBoxOrigem = new JComboBox<String>(nomemoedasorigem);
+		comboBoxOrigem.setBounds(80, 65, 100, 30);
+		comboBoxOrigem.setSelectedIndex(-1);
 				
-		moedaorigem.addActionListener(new ActionListener() {
+		comboBoxOrigem.addActionListener(new ActionListener() {
 				  
 			@Override 
 			public void actionPerformed(ActionEvent e) {					
-				lblNISo.setText("Selecionou : "+ moedaorigem.getSelectedItem());					
+				lblAO.setText("Selecionou : "+ comboBoxOrigem.getSelectedItem());					
 			}
 					
 		});		
@@ -58,20 +58,20 @@ public class HelloSwing extends JFrame{
 		
 		// Início Bloco JComboBox Moeda Destino
 		
-		JLabel lblNISd = new JLabel("Nenhum Item selecionado");
+		JLabel lblAD = new JLabel("Nenhum Item selecionado");
 				
 		String nomemoedasdestino [] = {"Reais","Dolares","Euros"};
 				
-		JComboBox<String> moedadestino = new JComboBox<String>(nomemoedasdestino);
-		moedadestino.setBounds(300, 65, 100, 30);
-		moedadestino.setSelectedIndex(-1);
+		JComboBox<String> comboBoxDestino = new JComboBox<String>(nomemoedasdestino);
+		comboBoxDestino.setBounds(300, 65, 100, 30);
+		comboBoxDestino.setSelectedIndex(-1);
 										
-		moedadestino.addActionListener(new ActionListener() {
+		comboBoxDestino.addActionListener(new ActionListener() {
 						  
 			@Override 
 			public void actionPerformed(ActionEvent e) {
-				lblNISd.setText("Selecionou : "+ moedadestino.getSelectedItem());
-			}
+				lblAD.setText("Selecionou : "+ comboBoxDestino.getSelectedItem());
+			}				
 					
 		});			
 							
@@ -98,10 +98,10 @@ public class HelloSwing extends JFrame{
 		// Adiciona os itens no frame
 		abamoedas.add(lblorigem);
 		abamoedas.add(lbldestino);
-		abamoedas.add(moedaorigem);
-		abamoedas.add(moedadestino);
-		abamoedas.add(lblNISo);
-		abamoedas.add(lblNISd);
+		abamoedas.add(comboBoxOrigem);
+		abamoedas.add(comboBoxDestino);
+		abamoedas.add(lblAO);
+		abamoedas.add(lblAD);
 		abamoedas.add(txtorigem);
 		abamoedas.add(txtdestino);
 		abamoedas.add(bttnconverter);
