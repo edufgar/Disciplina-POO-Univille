@@ -37,43 +37,21 @@ public class HelloSwing extends JFrame{
 		
 		// Início Bloco JComboBox Moeda Origem
 		
-		JLabel lblAO = new JLabel("Nenhum Item selecionado");
-				
 		String nomemoedasorigem [] = {"Reais","Dolares","Euros"};
 				
 		JComboBox<String> comboBoxOrigem = new JComboBox<String>(nomemoedasorigem);
 		comboBoxOrigem.setBounds(80, 65, 100, 30);
 		comboBoxOrigem.setSelectedIndex(-1);
-				
-		comboBoxOrigem.addActionListener(new ActionListener() {
-				  
-			@Override 
-			public void actionPerformed(ActionEvent e) {					
-				lblAO.setText("Selecionou : "+ comboBoxOrigem.getSelectedItem());					
-			}
-					
-		});		
 						
 		// Fim Bloco JComboBox Moeda Origem  
 		
 		// Início Bloco JComboBox Moeda Destino
-		
-		JLabel lblAD = new JLabel("Nenhum Item selecionado");
 				
 		String nomemoedasdestino [] = {"Reais","Dolares","Euros"};
 				
 		JComboBox<String> comboBoxDestino = new JComboBox<String>(nomemoedasdestino);
 		comboBoxDestino.setBounds(300, 65, 100, 30);
 		comboBoxDestino.setSelectedIndex(-1);
-										
-		comboBoxDestino.addActionListener(new ActionListener() {
-						  
-			@Override 
-			public void actionPerformed(ActionEvent e) {
-				lblAD.setText("Selecionou : "+ comboBoxDestino.getSelectedItem());
-			}				
-					
-		});			
 							
 		// Fim Bloco JComboBox Moeda Destino 
 		
@@ -82,14 +60,14 @@ public class HelloSwing extends JFrame{
 		lblorigem.setBounds(35, 65, 80, 30);
 		
 		JTextField txtorigem = new JTextField(200);
-		txtorigem.setBounds(80, 135, 100, 30);
+		txtorigem.setBounds(80, 125, 100, 30);
 		  
 		JLabel lbldestino = new JLabel("Para: ");
 		lbldestino.setForeground(Color.BLACK);
 		lbldestino.setBounds(245, 65, 80, 30);
 		
 		JTextField txtdestino = new JTextField(200);
-		txtdestino.setBounds(300, 135, 100, 30);
+		txtdestino.setBounds(300, 125, 100, 30);
 		txtdestino.setEditable(false);
 					
 		JButton bttnconverter = new JButton("Converter!!");
@@ -100,8 +78,6 @@ public class HelloSwing extends JFrame{
 		abamoedas.add(lbldestino);
 		abamoedas.add(comboBoxOrigem);
 		abamoedas.add(comboBoxDestino);
-		abamoedas.add(lblAO);
-		abamoedas.add(lblAD);
 		abamoedas.add(txtorigem);
 		abamoedas.add(txtdestino);
 		abamoedas.add(bttnconverter);
