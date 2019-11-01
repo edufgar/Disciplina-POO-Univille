@@ -1,4 +1,4 @@
-
+package ArquivosTestes;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -10,11 +10,11 @@ public class Main {
 		SwingUtilities.invokeLater(new Runnable() {
             public void run() {
             	// Instancia a nova Janela
-            	ConversorUniversal conversor =  new ConversorUniversal();
+            	HelloSwing hello =  new HelloSwing();
             	// Finaliza o programa quando fechar a janela
-            	conversor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            	hello.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             	// Exibe a janela
-            	conversor.show();
+            	hello.show();
             }
         });
 	}

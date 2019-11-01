@@ -1,4 +1,5 @@
 
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -26,6 +27,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JTabbedPane;
 
 import org.omg.CORBA.PRIVATE_MEMBER;
 
@@ -53,6 +55,10 @@ public class ConversorUniversal extends JFrame {
 	private void criarMenu() {
 		
 		JMenuBar menuBar = new JMenuBar();
+		JTabbedPane tabPane = new JTabbedPane();
+		Moedas abaMoedas = new Moedas();
+		Temperaturas abaTemperaturas = new Temperaturas();
+		Comprimentos abaComprimentos = new Comprimentos();
 		
 		// Cria o menu Arquivo
 		JMenu menuArquivo = new JMenu("Arquivo");
@@ -93,7 +99,14 @@ public class ConversorUniversal extends JFrame {
 			
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				JOptionPane.showMessageDialog(null, "Item selecionado? "+checkItemMoedas.isSelected());
+				// JOptionPane.showMessageDialog(null, "Item selecionado? "+checkItemMoedas.isSelected());
+				
+				if(checkItemMoedas.isSelected()) {
+					tabPane.addTab("Moedas", abaMoedas);
+				}else {
+					tabPane.remove(abaMoedas);
+				}
+				
 			}
 		});
 		
@@ -103,7 +116,13 @@ public class ConversorUniversal extends JFrame {
 			
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				JOptionPane.showMessageDialog(null, "Item selecionado? "+checkItemTemperatura.isSelected());
+				
+				if(checkItemTemperatura.isSelected()) {
+					tabPane.addTab("Temperaturas", abaTemperaturas);
+				}else {
+					tabPane.remove(abaTemperaturas);
+				}
+				
 			}
 		});
 		
@@ -113,7 +132,14 @@ public class ConversorUniversal extends JFrame {
 			
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				JOptionPane.showMessageDialog(null, "Item selecionado? "+checkItemComprimentos.isSelected());
+				// JOptionPane.showMessageDialog(null, "Item selecionado? "+checkItemComprimentos.isSelected());
+				
+				if(checkItemComprimentos.isSelected()) {
+					tabPane.addTab("Comprimentos", abaComprimentos);
+				}else {
+					tabPane.remove(abaComprimentos);
+				}
+				
 			}
 		});
 				
@@ -144,8 +170,17 @@ public class ConversorUniversal extends JFrame {
 		setJMenuBar(menuBar);
 		
 		
+		
+		tabPane.setBorder(BorderFactory.createEmptyBorder(35,35,35,35));
+		
+		
+		tabPane.addTab("Moedas", abaMoedas);
+		tabPane.addTab("Temperaturas", abaTemperaturas);
+		tabPane.addTab("Comprimentos", abaComprimentos);
+		
+		
 		// Adiciona o painel na janela
-		//add(painel);
+		add(tabPane);
 		
 		show();		
 		
