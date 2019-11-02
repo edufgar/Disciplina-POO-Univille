@@ -20,7 +20,7 @@ public class Comprimentos extends JPanel {
 		
 		// Início Bloco JComboBox Comprimento Origem
 		setLayout(null);
-				String nomecomprimentosorigem [] = {"quilômetro","hectômetro","decâmetro","metro","decímetro","centímetro","milímetro"};
+				String nomecomprimentosorigem [] = {"quilômetro","metro","centímetro","milímetro"};
 						
 				JComboBox<String> comboBoxOrigem = new JComboBox<String>(nomecomprimentosorigem);
 				comboBoxOrigem.setBounds(80, 65, 100, 30);
@@ -30,7 +30,7 @@ public class Comprimentos extends JPanel {
 				
 				// Início Bloco JComboBox Comprimento Destino
 						
-				String nomecomprimentosdestino [] = {"quilômetro","hectômetro","decâmetro","metro","decímetro","centímetro","milímetro"};
+				String nomecomprimentosdestino [] = {"quilômetro","metro","centímetro","milímetro"};
 						
 				JComboBox<String> comboBoxDestino = new JComboBox<String>(nomecomprimentosdestino);
 				comboBoxDestino.setBounds(300, 65, 100, 30);
