@@ -18,7 +18,7 @@ public class Temperaturas extends JPanel {
 	
 	private void setLayout() {
 		
-		// InÌcio Bloco JComboBox Temperatura Origem
+		// In√≠cio Bloco JComboBox Temperatura Origem
 		setLayout(null);
 				String nometemperaturasorigem [] = {"Celsius","Fahrenheit","Kelvin"};
 						
@@ -28,7 +28,7 @@ public class Temperaturas extends JPanel {
 								
 				// Fim Bloco JComboBox temperatura Origem  
 				
-				// InÌcio Bloco JComboBox temperatura Destino
+				// In√≠cio Bloco JComboBox temperatura Destino
 						
 				String nometemperaturasdestino [] = {"Celsius","Fahrenheit","Kelvin"};
 						
@@ -56,7 +56,7 @@ public class Temperaturas extends JPanel {
 				JButton bttnconverter = new JButton("Converter!!");
 				bttnconverter.setBounds(300, 185, 100, 30);
 				
-				// AÁ„o do Bot„o Converter
+				// A√ß√£o do Bot√£o Converter
 				
 				bttnconverter.addActionListener(new ActionListener() {
 					
@@ -76,12 +76,28 @@ public class Temperaturas extends JPanel {
 							valorpara = (valorde - 32.0) * 5.0/9.0;
 						}
 						
+						if(moedade.equals("Celsius")&& moedapara.equals("Kelvin")) {
+							valorpara = valorde + 273.15;
+						}
+						
+						if(moedade.equals("Kelvin")&& moedapara.equals("Celsius")) {
+							valorpara = valorde - 273.15;
+						}
+						
+						if(moedade.equals("Fahrenheit")&& moedapara.equals("Kelvin")) {
+							valorpara = (valorde - 32.0) * 5.0/9.0 + 273.15;
+						}
+						
+						if(moedade.equals("Kelvin")&& moedapara.equals("Fahrenheit")) {
+							valorpara = (valorde - 273.15) * 9.0/5.0 + 32;
+						}
+						
 						txtdestino.setText(String.format("%.2f", valorpara));		
 						
 					}
 				});
 				
-				// Fim AÁ„o Bot„o Converter
+				// Fim A√ß√£o Bot√£o Converter
 				
 				// Adiciona os itens no frame
 				add(lblorigem);
