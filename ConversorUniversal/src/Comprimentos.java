@@ -18,9 +18,9 @@ public class Comprimentos extends JPanel {
 	
 	private void setLayout() {
 		
-		// InÌcio Bloco JComboBox Comprimento Origem
+		// In√≠cio Bloco JComboBox Comprimento Origem
 		setLayout(null);
-				String nomecomprimentosorigem [] = {"quilÙmetro","hectÙmetro","dec‚metro","metro","decÌmetro","centÌmetro","milÌmetro"};
+				String nomecomprimentosorigem [] = {"quil√¥metro","hect√¥metro","dec√¢metro","metro","dec√≠metro","cent√≠metro","mil√≠metro"};
 						
 				JComboBox<String> comboBoxOrigem = new JComboBox<String>(nomecomprimentosorigem);
 				comboBoxOrigem.setBounds(80, 65, 100, 30);
@@ -28,9 +28,9 @@ public class Comprimentos extends JPanel {
 								
 				// Fim Bloco JComboBox Comprimento Origem  
 				
-				// InÌcio Bloco JComboBox Comprimento Destino
+				// In√≠cio Bloco JComboBox Comprimento Destino
 						
-				String nomecomprimentosdestino [] = {"quilÙmetro","hectÙmetro","dec‚metro","metro","decÌmetro","centÌmetro","milÌmetro"};
+				String nomecomprimentosdestino [] = {"quil√¥metro","hect√¥metro","dec√¢metro","metro","dec√≠metro","cent√≠metro","mil√≠metro"};
 						
 				JComboBox<String> comboBoxDestino = new JComboBox<String>(nomecomprimentosdestino);
 				comboBoxDestino.setBounds(300, 65, 100, 30);
@@ -56,7 +56,7 @@ public class Comprimentos extends JPanel {
 				JButton bttnconverter = new JButton("Converter!!");
 				bttnconverter.setBounds(300, 185, 100, 30);
 				
-				// AÁ„o do Bot„o Converter
+				// A√ß√£o do Bot√£o Converter
 				
 				bttnconverter.addActionListener(new ActionListener() {
 					
@@ -68,16 +68,60 @@ public class Comprimentos extends JPanel {
 						double valorde = Double.parseDouble(txtorigem.getText());
 						double valorpara = 0;
 							
-						if(moedade.equals("Reais")&& moedapara.equals("Dolares")) {
-							valorpara = valorde * 4;
-						}						
+						if(moedade.equals("quil√¥metro")&& moedapara.equals("metro")) {
+							valorpara = valorde * 1000;
+						}
+						
+						if(moedade.equals("metro")&& moedapara.equals("quil√¥metro")) {
+							valorpara = valorde / 1000;
+						}
+						
+						if(moedade.equals("quil√¥metro")&& moedapara.equals("cent√≠metro")) {
+							valorpara = valorde * 100000;
+						}
+						
+						if(moedade.equals("cent√≠metro")&& moedapara.equals("quil√¥metro")) {
+							valorpara = valorde / 100000;
+						}
+						
+						if(moedade.equals("quil√¥metro")&& moedapara.equals("mil√≠metro")) {
+							valorpara = valorde * 1000000;
+						}
+						
+						if(moedade.equals("mil√≠metro")&& moedapara.equals("quil√¥metro")) {
+							valorpara = valorde / 1000000;
+						}
+						
+						if(moedade.equals("metro")&& moedapara.equals("cent√≠metro")) {
+							valorpara = valorde * 100;
+						}
+						
+						if(moedade.equals("cent√≠metro")&& moedapara.equals("metro")) {
+							valorpara = valorde / 100;
+						}
+						
+						if(moedade.equals("metro")&& moedapara.equals("mil√≠metro")) {
+							valorpara = valorde * 1000;
+						}
+						
+						if(moedade.equals("mil√≠metro")&& moedapara.equals("metro")) {
+							valorpara = valorde / 1000;
+						}
+						
+						if(moedade.equals("cent√≠metro")&& moedapara.equals("mil√≠metro")) {
+							valorpara = valorde * 10;
+						}
+						
+						if(moedade.equals("mil√≠metro")&& moedapara.equals("cent√≠metro")) {
+							valorpara = valorde / 10;
+						}
 						
 						txtdestino.setText(String.format("%.2f", valorpara));		
 						
 					}
 				});
 				
-				// Fim AÁ„o Bot„o Converter
+				// Fim A√ß√£o Bot√£o Converter
 				
 				// Adiciona os itens no frame
 				add(lblorigem);
