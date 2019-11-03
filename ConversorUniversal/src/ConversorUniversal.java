@@ -1,7 +1,7 @@
 
-
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -28,6 +28,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
 
 import org.omg.CORBA.PRIVATE_MEMBER;
 
@@ -89,6 +90,8 @@ public class ConversorUniversal extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+												
+
 			}
 		});
 				

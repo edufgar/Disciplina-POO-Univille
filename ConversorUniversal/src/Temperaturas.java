@@ -18,7 +18,7 @@ public class Temperaturas extends JPanel {
 	
 	private void setLayout() {
 		
-		// In√≠cio Bloco JComboBox Temperatura Origem
+		// InÌcio Bloco JComboBox Temperatura Origem
 		setLayout(null);
 				String nometemperaturasorigem [] = {"Celsius","Fahrenheit","Kelvin"};
 						
@@ -28,7 +28,7 @@ public class Temperaturas extends JPanel {
 								
 				// Fim Bloco JComboBox temperatura Origem  
 				
-				// In√≠cio Bloco JComboBox temperatura Destino
+				// InÌcio Bloco JComboBox temperatura Destino
 						
 				String nometemperaturasdestino [] = {"Celsius","Fahrenheit","Kelvin"};
 						
@@ -56,7 +56,7 @@ public class Temperaturas extends JPanel {
 				JButton bttnconverter = new JButton("Converter!!");
 				bttnconverter.setBounds(300, 185, 100, 30);
 				
-				// A√ß√£o do Bot√£o Converter
+				// AÁ„o do Bot„o Converter
 				
 				bttnconverter.addActionListener(new ActionListener() {
 					
@@ -97,7 +97,7 @@ public class Temperaturas extends JPanel {
 					}
 				});
 				
-				// Fim A√ß√£o Bot√£o Converter
+				// Fim AÁ„o Bot„o Converter
 				
 				// Adiciona os itens no frame
 				add(lblorigem);

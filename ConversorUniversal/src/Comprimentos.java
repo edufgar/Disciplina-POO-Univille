@@ -18,9 +18,9 @@ public class Comprimentos extends JPanel {
 	
 	private void setLayout() {
 		
-		// In√≠cio Bloco JComboBox Comprimento Origem
+		// InÌcio Bloco JComboBox Comprimento Origem
 		setLayout(null);
-				String nomecomprimentosorigem [] = {"quil√¥metro","metro","cent√≠metro","mil√≠metro"};
+				String nomecomprimentosorigem [] = {"quilÙmetro","metro","centÌmetro","milÌmetro"};
 						
 				JComboBox<String> comboBoxOrigem = new JComboBox<String>(nomecomprimentosorigem);
 				comboBoxOrigem.setBounds(80, 65, 100, 30);
@@ -28,9 +28,9 @@ public class Comprimentos extends JPanel {
 								
 				// Fim Bloco JComboBox Comprimento Origem  
 				
-				// In√≠cio Bloco JComboBox Comprimento Destino
+				// InÌcio Bloco JComboBox Comprimento Destino
 						
-				String nomecomprimentosdestino [] = {"quil√¥metro","metro","cent√≠metro","mil√≠metro"};
+				String nomecomprimentosdestino [] = {"quilÙmetro","metro","centÌmetro","milÌmetro"};
 						
 				JComboBox<String> comboBoxDestino = new JComboBox<String>(nomecomprimentosdestino);
 				comboBoxDestino.setBounds(300, 65, 100, 30);
@@ -56,7 +56,7 @@ public class Comprimentos extends JPanel {
 				JButton bttnconverter = new JButton("Converter!!");
 				bttnconverter.setBounds(300, 185, 100, 30);
 				
-				// A√ß√£o do Bot√£o Converter
+				// AÁ„o do Bot„o Converter
 				
 				bttnconverter.addActionListener(new ActionListener() {
 					
@@ -68,51 +68,51 @@ public class Comprimentos extends JPanel {
 						double valorde = Double.parseDouble(txtorigem.getText());
 						double valorpara = 0;
 							
-						if(moedade.equals("quil√¥metro")&& moedapara.equals("metro")) {
+						if(moedade.equals("quilÙmetro")&& moedapara.equals("metro")) {
 							valorpara = valorde * 1000;
 						}
 						
-						if(moedade.equals("metro")&& moedapara.equals("quil√¥metro")) {
+						if(moedade.equals("metro")&& moedapara.equals("quilÙmetro")) {
 							valorpara = valorde / 1000;
 						}
 						
-						if(moedade.equals("quil√¥metro")&& moedapara.equals("cent√≠metro")) {
+						if(moedade.equals("quilÙmetro")&& moedapara.equals("centÌmetro")) {
 							valorpara = valorde * 100000;
 						}
 						
-						if(moedade.equals("cent√≠metro")&& moedapara.equals("quil√¥metro")) {
+						if(moedade.equals("centÌmetro")&& moedapara.equals("quilÙmetro")) {
 							valorpara = valorde / 100000;
 						}
 						
-						if(moedade.equals("quil√¥metro")&& moedapara.equals("mil√≠metro")) {
+						if(moedade.equals("quilÙmetro")&& moedapara.equals("milÌmetro")) {
 							valorpara = valorde * 1000000;
 						}
 						
-						if(moedade.equals("mil√≠metro")&& moedapara.equals("quil√¥metro")) {
+						if(moedade.equals("milÌmetro")&& moedapara.equals("quilÙmetro")) {
 							valorpara = valorde / 1000000;
 						}
 						
-						if(moedade.equals("metro")&& moedapara.equals("cent√≠metro")) {
+						if(moedade.equals("metro")&& moedapara.equals("centÌmetro")) {
 							valorpara = valorde * 100;
 						}
 						
-						if(moedade.equals("cent√≠metro")&& moedapara.equals("metro")) {
+						if(moedade.equals("centÌmetro")&& moedapara.equals("metro")) {
 							valorpara = valorde / 100;
 						}
 						
-						if(moedade.equals("metro")&& moedapara.equals("mil√≠metro")) {
+						if(moedade.equals("metro")&& moedapara.equals("milÌmetro")) {
 							valorpara = valorde * 1000;
 						}
 						
-						if(moedade.equals("mil√≠metro")&& moedapara.equals("metro")) {
+						if(moedade.equals("milÌmetro")&& moedapara.equals("metro")) {
 							valorpara = valorde / 1000;
 						}
 						
-						if(moedade.equals("cent√≠metro")&& moedapara.equals("mil√≠metro")) {
+						if(moedade.equals("centÌmetro")&& moedapara.equals("milÌmetro")) {
 							valorpara = valorde * 10;
 						}
 						
-						if(moedade.equals("mil√≠metro")&& moedapara.equals("cent√≠metro")) {
+						if(moedade.equals("milÌmetro")&& moedapara.equals("centÌmetro")) {
 							valorpara = valorde / 10;
 						}
 						
@@ -121,7 +121,7 @@ public class Comprimentos extends JPanel {
 					}
 				});
 				
-				// Fim A√ß√£o Bot√£o Converter
+				// Fim AÁ„o Bot„o Converter
 				
 				// Adiciona os itens no frame
 				add(lblorigem);
