@@ -9,137 +9,165 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class Comprimentos extends JPanel {
-	
-	private JTextField txtorigem;
-	private JTextField txtdestino;
-	
-	public Comprimentos() {
-		
-		setLayout();
-		
-	}
-	
-	private void setLayout() {
-		
-		// InÌcio Bloco JComboBox Comprimento Origem
-		setLayout(null);
-				String nomecomprimentosorigem [] = {"quilÙmetro","metro","centÌmetro","milÌmetro"};
-						
-				JComboBox<String> comboBoxOrigem = new JComboBox<String>(nomecomprimentosorigem);
-				comboBoxOrigem.setBounds(80, 65, 100, 30);
-				// comboBoxOrigem.setSelectedIndex(-1);
-								
-				// Fim Bloco JComboBox Comprimento Origem  
-				
-				// InÌcio Bloco JComboBox Comprimento Destino
-						
-				String nomecomprimentosdestino [] = {"quilÙmetro","metro","centÌmetro","milÌmetro"};
-						
-				JComboBox<String> comboBoxDestino = new JComboBox<String>(nomecomprimentosdestino);
-				comboBoxDestino.setBounds(300, 65, 100, 30);
-				// comboBoxDestino.setSelectedIndex(-1);
-									
-				// Fim Bloco JComboBox Comprimento Destino 
-				
-				JLabel lblorigem = new JLabel("De: ");
-				lblorigem.setForeground(Color.BLACK);
-				lblorigem.setBounds(35, 65, 80, 30);
-				
-				txtorigem = new JTextField(200);
-				txtorigem.setBounds(80, 125, 100, 30);
-				  
-				JLabel lbldestino = new JLabel("Para: ");
-				lbldestino.setForeground(Color.BLACK);
-				lbldestino.setBounds(245, 65, 80, 30);
-				
-				txtdestino = new JTextField(200);
-				txtdestino.setBounds(300, 125, 100, 30);
-				txtdestino.setEditable(false);
-							
-				JButton bttnconverter = new JButton("Converter!!");
-				bttnconverter.setBounds(300, 185, 100, 30);
-				
-				// AÁ„o do Bot„o Converter
-				
-				bttnconverter.addActionListener(new ActionListener() {
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						String comprimentode = (String) comboBoxOrigem.getSelectedItem();
-						String comprimentopara = (String) comboBoxDestino.getSelectedItem();
-						
-						double valorde = Double.parseDouble(txtorigem.getText());
-						double valorpara = 0;
-							
-						if(comprimentode.equals("quilÙmetro")&& comprimentopara.equals("metro")) {
-							valorpara = valorde * 1000;
-						}
-						
-						if(comprimentode.equals("metro")&& comprimentopara.equals("quilÙmetro")) {
-							valorpara = valorde / 1000;
-						}
-						
-						if(comprimentode.equals("quilÙmetro")&& comprimentopara.equals("centÌmetro")) {
-							valorpara = valorde * 100000;
-						}
-						
-						if(comprimentode.equals("centÌmetro")&& comprimentopara.equals("quilÙmetro")) {
-							valorpara = valorde / 100000;
-						}
-						
-						if(comprimentode.equals("quilÙmetro")&& comprimentopara.equals("milÌmetro")) {
-							valorpara = valorde * 1000000;
-						}
-						
-						if(comprimentode.equals("milÌmetro")&& comprimentopara.equals("quilÙmetro")) {
-							valorpara = valorde / 1000000;
-						}
-						
-						if(comprimentode.equals("metro")&& comprimentopara.equals("centÌmetro")) {
-							valorpara = valorde * 100;
-						}
-						
-						if(comprimentode.equals("centÌmetro")&& comprimentopara.equals("metro")) {
-							valorpara = valorde / 100;
-						}
-						
-						if(comprimentode.equals("metro")&& comprimentopara.equals("milÌmetro")) {
-							valorpara = valorde * 1000;
-						}
-						
-						if(comprimentode.equals("milÌmetro")&& comprimentopara.equals("metro")) {
-							valorpara = valorde / 1000;
-						}
-						
-						if(comprimentode.equals("centÌmetro")&& comprimentopara.equals("milÌmetro")) {
-							valorpara = valorde * 10;
-						}
-						
-						if(comprimentode.equals("milÌmetro")&& comprimentopara.equals("centÌmetro")) {
-							valorpara = valorde / 10;
-						}
-						
-						txtdestino.setText(String.format("%.2f", valorpara));		
-						
-					}
-				});
-				
-				// Fim AÁ„o Bot„o Converter
-				
-				// Adiciona os itens no frame
-				add(lblorigem);
-				add(lbldestino);
-				add(comboBoxOrigem);
-				add(comboBoxDestino);
-				add(txtorigem);
-				add(txtdestino);
-				add(bttnconverter);
-		
-	}
-	
-	public void LimparCampos() {
-		txtorigem.setText("");
-		txtdestino.setText("");
-	}
+
+    private JTextField txtorigem;
+    private JTextField txtdestino;
+    private JComboBox<String> comboBoxOrigem;
+    private JComboBox<String> comboBoxDestino;
+    private JLabel lblorigem;
+    private JLabel lbldestino;
+    private JButton bttninverter;
+    private JButton bttnconverter;
+    // private String nomecomprimentosorigem;
+    // private String nomecomprimentosdestino;
+
+    public Comprimentos() {
+
+        setLayout();
+
+    }
+
+    private void setLayout() {
+
+        // In√≠cio Bloco JComboBox Comprimento Origem
+        setLayout(null);
+
+        String nomecomprimentosorigem [] = {"quil√¥metro","metro","cent√≠metro","mil√≠metro"};
+
+        comboBoxOrigem = new JComboBox<String>(nomecomprimentosorigem);
+        comboBoxOrigem.setBounds(80, 65, 100, 30);
+        // comboBoxOrigem.setSelectedIndex(-1);
+
+        // Fim Bloco JComboBox Comprimento Origem
+
+        // In√≠cio Bloco JComboBox Comprimento Destino
+
+        String nomecomprimentosdestino [] = {"quil√¥metro","metro","cent√≠metro","mil√≠metro"};
+
+        comboBoxDestino = new JComboBox<String>(nomecomprimentosdestino);
+        comboBoxDestino.setBounds(320, 65, 100, 30);
+        // comboBoxDestino.setSelectedIndex(-1);
+
+        // Fim Bloco JComboBox Comprimento Destino
+
+        lblorigem = new JLabel("De: ");
+        lblorigem.setForeground(Color.BLACK);
+        lblorigem.setBounds(35, 65, 80, 30);
+
+        txtorigem = new JTextField(200);
+        txtorigem.setBounds(80, 125, 100, 30);
+
+        lbldestino = new JLabel("Para: ");
+        lbldestino.setForeground(Color.BLACK);
+        lbldestino.setBounds(265, 65, 80, 30);
+
+        txtdestino = new JTextField(200);
+        txtdestino.setBounds(320, 125, 100, 30);
+        txtdestino.setEditable(false);
+
+        bttninverter = new JButton("<->");
+        bttninverter.setBounds(195, 65, 55, 30);
+
+        // A√ß√£o do Bot√£o Inverter
+
+        bttninverter.addActionListener(e -> inverterOpcoes());
+
+        // Fim A√ß√£o Bot√£o Inverter
+
+        bttnconverter = new JButton("Converter!!");
+        bttnconverter.setBounds(320, 185, 100, 30);
+
+        // A√ß√£o do Bot√£o Converter
+
+        bttnconverter.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String comprimentode = (String) comboBoxOrigem.getSelectedItem();
+                String comprimentopara = (String) comboBoxDestino.getSelectedItem();
+
+                double valorde = Double.parseDouble(txtorigem.getText());
+                double valorpara = 0;
+
+                if(comprimentode.equals("quil√¥metro")&& comprimentopara.equals("metro")) {
+                    valorpara = valorde * 1000;
+                }
+
+                if(comprimentode.equals("metro")&& comprimentopara.equals("quil√¥metro")) {
+                    valorpara = valorde / 1000;
+                }
+
+                if(comprimentode.equals("quil√¥metro")&& comprimentopara.equals("cent√≠metro")) {
+                    valorpara = valorde * 100000;
+                }
+
+                if(comprimentode.equals("cent√≠metro")&& comprimentopara.equals("quil√¥metro")) {
+                    valorpara = valorde / 100000;
+                }
+
+                if(comprimentode.equals("quil√¥metro")&& comprimentopara.equals("mil√≠metro")) {
+                    valorpara = valorde * 1000000;
+                }
+
+                if(comprimentode.equals("mil√≠metro")&& comprimentopara.equals("quil√¥metro")) {
+                    valorpara = valorde / 1000000;
+                }
+
+                if(comprimentode.equals("metro")&& comprimentopara.equals("cent√≠metro")) {
+                    valorpara = valorde * 100;
+                }
+
+                if(comprimentode.equals("cent√≠metro")&& comprimentopara.equals("metro")) {
+                    valorpara = valorde / 100;
+                }
+
+                if(comprimentode.equals("metro")&& comprimentopara.equals("mil√≠metro")) {
+                    valorpara = valorde * 1000;
+                }
+
+                if(comprimentode.equals("mil√≠metro")&& comprimentopara.equals("metro")) {
+                    valorpara = valorde / 1000;
+                }
+
+                if(comprimentode.equals("cent√≠metro")&& comprimentopara.equals("mil√≠metro")) {
+                    valorpara = valorde * 10;
+                }
+
+                if(comprimentode.equals("mil√≠metro")&& comprimentopara.equals("cent√≠metro")) {
+                    valorpara = valorde / 10;
+                }
+
+                txtdestino.setText(String.format("%.2f", valorpara));
+
+            }
+        });
+
+        // Fim A√ß√£o Bot√£o Converter
+
+        // Adiciona os itens no frame
+        add(lblorigem);
+        add(lbldestino);
+        add(comboBoxOrigem);
+        add(comboBoxDestino);
+        add(txtorigem);
+        add(txtdestino);
+        add(bttninverter);
+        add(bttnconverter);
+
+    }
+
+    private void inverterOpcoes() {
+
+        int de = comboBoxOrigem.getSelectedIndex();
+        comboBoxOrigem.setSelectedIndex(comboBoxDestino.getSelectedIndex());
+        comboBoxDestino.setSelectedIndex(de);
+
+    }
+
+    public void LimparCampos() {
+        txtorigem.setText("");
+        txtdestino.setText("");
+    }
+
 
 }
