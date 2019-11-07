@@ -10,6 +10,9 @@ import javax.swing.JTextField;
 
 public class Comprimentos extends JPanel {
 	
+	private JTextField txtorigem;
+	private JTextField txtdestino;
+	
 	public Comprimentos() {
 		
 		setLayout();
@@ -42,14 +45,14 @@ public class Comprimentos extends JPanel {
 				lblorigem.setForeground(Color.BLACK);
 				lblorigem.setBounds(35, 65, 80, 30);
 				
-				JTextField txtorigem = new JTextField(200);
+				txtorigem = new JTextField(200);
 				txtorigem.setBounds(80, 125, 100, 30);
 				  
 				JLabel lbldestino = new JLabel("Para: ");
 				lbldestino.setForeground(Color.BLACK);
 				lbldestino.setBounds(245, 65, 80, 30);
 				
-				JTextField txtdestino = new JTextField(200);
+				txtdestino = new JTextField(200);
 				txtdestino.setBounds(300, 125, 100, 30);
 				txtdestino.setEditable(false);
 							
@@ -62,57 +65,57 @@ public class Comprimentos extends JPanel {
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						String moedade = (String) comboBoxOrigem.getSelectedItem();
-						String moedapara = (String) comboBoxDestino.getSelectedItem();
+						String comprimentode = (String) comboBoxOrigem.getSelectedItem();
+						String comprimentopara = (String) comboBoxDestino.getSelectedItem();
 						
 						double valorde = Double.parseDouble(txtorigem.getText());
 						double valorpara = 0;
 							
-						if(moedade.equals("quilômetro")&& moedapara.equals("metro")) {
+						if(comprimentode.equals("quilômetro")&& comprimentopara.equals("metro")) {
 							valorpara = valorde * 1000;
 						}
 						
-						if(moedade.equals("metro")&& moedapara.equals("quilômetro")) {
+						if(comprimentode.equals("metro")&& comprimentopara.equals("quilômetro")) {
 							valorpara = valorde / 1000;
 						}
 						
-						if(moedade.equals("quilômetro")&& moedapara.equals("centímetro")) {
+						if(comprimentode.equals("quilômetro")&& comprimentopara.equals("centímetro")) {
 							valorpara = valorde * 100000;
 						}
 						
-						if(moedade.equals("centímetro")&& moedapara.equals("quilômetro")) {
+						if(comprimentode.equals("centímetro")&& comprimentopara.equals("quilômetro")) {
 							valorpara = valorde / 100000;
 						}
 						
-						if(moedade.equals("quilômetro")&& moedapara.equals("milímetro")) {
+						if(comprimentode.equals("quilômetro")&& comprimentopara.equals("milímetro")) {
 							valorpara = valorde * 1000000;
 						}
 						
-						if(moedade.equals("milímetro")&& moedapara.equals("quilômetro")) {
+						if(comprimentode.equals("milímetro")&& comprimentopara.equals("quilômetro")) {
 							valorpara = valorde / 1000000;
 						}
 						
-						if(moedade.equals("metro")&& moedapara.equals("centímetro")) {
+						if(comprimentode.equals("metro")&& comprimentopara.equals("centímetro")) {
 							valorpara = valorde * 100;
 						}
 						
-						if(moedade.equals("centímetro")&& moedapara.equals("metro")) {
+						if(comprimentode.equals("centímetro")&& comprimentopara.equals("metro")) {
 							valorpara = valorde / 100;
 						}
 						
-						if(moedade.equals("metro")&& moedapara.equals("milímetro")) {
+						if(comprimentode.equals("metro")&& comprimentopara.equals("milímetro")) {
 							valorpara = valorde * 1000;
 						}
 						
-						if(moedade.equals("milímetro")&& moedapara.equals("metro")) {
+						if(comprimentode.equals("milímetro")&& comprimentopara.equals("metro")) {
 							valorpara = valorde / 1000;
 						}
 						
-						if(moedade.equals("centímetro")&& moedapara.equals("milímetro")) {
+						if(comprimentode.equals("centímetro")&& comprimentopara.equals("milímetro")) {
 							valorpara = valorde * 10;
 						}
 						
-						if(moedade.equals("milímetro")&& moedapara.equals("centímetro")) {
+						if(comprimentode.equals("milímetro")&& comprimentopara.equals("centímetro")) {
 							valorpara = valorde / 10;
 						}
 						
@@ -132,6 +135,11 @@ public class Comprimentos extends JPanel {
 				add(txtdestino);
 				add(bttnconverter);
 		
+	}
+	
+	public void LimparCampos() {
+		txtorigem.setText("");
+		txtdestino.setText("");
 	}
 
 }

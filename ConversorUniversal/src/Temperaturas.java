@@ -10,6 +10,9 @@ import javax.swing.JTextField;
 
 public class Temperaturas extends JPanel {
 	
+	private JTextField txtorigem;
+	private JTextField txtdestino;
+	
 	public Temperaturas() {
 		
 		setLayout();
@@ -42,14 +45,14 @@ public class Temperaturas extends JPanel {
 				lblorigem.setForeground(Color.BLACK);
 				lblorigem.setBounds(35, 65, 80, 30);
 				
-				JTextField txtorigem = new JTextField(200);
+				txtorigem = new JTextField(200);
 				txtorigem.setBounds(80, 125, 100, 30);
 				  
 				JLabel lbldestino = new JLabel("Para: ");
 				lbldestino.setForeground(Color.BLACK);
 				lbldestino.setBounds(245, 65, 80, 30);
 				
-				JTextField txtdestino = new JTextField(200);
+				txtdestino = new JTextField(200);
 				txtdestino.setBounds(300, 125, 100, 30);
 				txtdestino.setEditable(false);
 							
@@ -62,33 +65,33 @@ public class Temperaturas extends JPanel {
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						String moedade = (String) comboBoxOrigem.getSelectedItem();
-						String moedapara = (String) comboBoxDestino.getSelectedItem();
+						String temperaturade = (String) comboBoxOrigem.getSelectedItem();
+						String temperaturapara = (String) comboBoxDestino.getSelectedItem();
 						
 						double valorde = Double.parseDouble(txtorigem.getText());
 						double valorpara = 0;
 							
-						if(moedade.equals("Celsius")&& moedapara.equals("Fahrenheit")) {
+						if(temperaturade.equals("Celsius")&& temperaturapara.equals("Fahrenheit")) {
 							valorpara = (valorde * 9.0/5.0) + 32.0;
 						}
 						
-						if(moedade.equals("Fahrenheit")&& moedapara.equals("Celsius")) {
+						if(temperaturade.equals("Fahrenheit")&& temperaturapara.equals("Celsius")) {
 							valorpara = (valorde - 32.0) * 5.0/9.0;
 						}
 						
-						if(moedade.equals("Celsius")&& moedapara.equals("Kelvin")) {
+						if(temperaturade.equals("Celsius")&& temperaturapara.equals("Kelvin")) {
 							valorpara = valorde + 273.15;
 						}
 						
-						if(moedade.equals("Kelvin")&& moedapara.equals("Celsius")) {
+						if(temperaturade.equals("Kelvin")&& temperaturapara.equals("Celsius")) {
 							valorpara = valorde - 273.15;
 						}
 						
-						if(moedade.equals("Fahrenheit")&& moedapara.equals("Kelvin")) {
+						if(temperaturade.equals("Fahrenheit")&& temperaturapara.equals("Kelvin")) {
 							valorpara = (valorde - 32.0) * 5.0/9.0 + 273.15;
 						}
 						
-						if(moedade.equals("Kelvin")&& moedapara.equals("Fahrenheit")) {
+						if(temperaturade.equals("Kelvin")&& temperaturapara.equals("Fahrenheit")) {
 							valorpara = (valorde - 273.15) * 9.0/5.0 + 32;
 						}
 						
@@ -108,6 +111,11 @@ public class Temperaturas extends JPanel {
 				add(txtdestino);
 				add(bttnconverter);
 		
+	}
+	
+	public void LimparCampos() {
+		txtorigem.setText("");
+		txtdestino.setText("");
 	}
 
 }

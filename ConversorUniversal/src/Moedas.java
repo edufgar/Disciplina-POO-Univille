@@ -10,6 +10,9 @@ import javax.swing.JTextField;
 
 public class Moedas extends JPanel {
 	
+	private JTextField txtorigem;
+	private JTextField txtdestino;
+	
 	public Moedas() {
 			
 		setLayout();
@@ -42,14 +45,14 @@ public class Moedas extends JPanel {
 				lblorigem.setForeground(Color.BLACK);
 				lblorigem.setBounds(35, 65, 80, 30);
 				
-				JTextField txtorigem = new JTextField(200);
+				txtorigem = new JTextField(200);
 				txtorigem.setBounds(80, 125, 100, 30);
 				  
 				JLabel lbldestino = new JLabel("Para: ");
 				lbldestino.setForeground(Color.BLACK);
 				lbldestino.setBounds(245, 65, 80, 30);
 				
-				JTextField txtdestino = new JTextField(200);
+				txtdestino = new JTextField(200);
 				txtdestino.setBounds(300, 125, 100, 30);
 				txtdestino.setEditable(false);
 							
@@ -108,6 +111,11 @@ public class Moedas extends JPanel {
 				add(txtdestino);
 				add(bttnconverter);
 		
+	}
+	
+	public void LimparCampos() {
+		txtorigem.setText("");
+		txtdestino.setText("");
 	}
 	
 		
