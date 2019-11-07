@@ -1,25 +1,20 @@
-import java.awt.Color;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class Comprimentos extends JPanel {
 
     private JTextField txtorigem;
     private JTextField txtdestino;
-    private JComboBox<String> comboBoxOrigem;
-    private JComboBox<String> comboBoxDestino;
+    private JComboBox<String> opcoesOrigem;
+    private JComboBox<String> opcoesDestino;
     private JLabel lblorigem;
     private JLabel lbldestino;
     private JButton bttninverter;
     private JButton bttnconverter;
-    // private String nomecomprimentosorigem;
-    // private String nomecomprimentosdestino;
+    // private String comprimentosorigem;
+    // private String comprimentosdestino;
 
     public Comprimentos() {
 
@@ -32,20 +27,20 @@ public class Comprimentos extends JPanel {
         // Início Bloco JComboBox Comprimento Origem
         setLayout(null);
 
-        String nomecomprimentosorigem [] = {"quilômetro","metro","centímetro","milímetro"};
+        String comprimentosorigem [] = {"quilômetro","metro","centímetro","milímetro"};
 
-        comboBoxOrigem = new JComboBox<String>(nomecomprimentosorigem);
-        comboBoxOrigem.setBounds(80, 65, 100, 30);
+        opcoesOrigem = new JComboBox<String>(comprimentosorigem);
+        opcoesOrigem.setBounds(80, 65, 100, 30);
         // comboBoxOrigem.setSelectedIndex(-1);
 
         // Fim Bloco JComboBox Comprimento Origem
 
         // Início Bloco JComboBox Comprimento Destino
 
-        String nomecomprimentosdestino [] = {"quilômetro","metro","centímetro","milímetro"};
+        String comprimentosdestino [] = {"quilômetro","metro","centímetro","milímetro"};
 
-        comboBoxDestino = new JComboBox<String>(nomecomprimentosdestino);
-        comboBoxDestino.setBounds(320, 65, 100, 30);
+        opcoesDestino = new JComboBox<String>(comprimentosdestino);
+        opcoesDestino.setBounds(320, 65, 100, 30);
         // comboBoxDestino.setSelectedIndex(-1);
 
         // Fim Bloco JComboBox Comprimento Destino
@@ -65,7 +60,7 @@ public class Comprimentos extends JPanel {
         txtdestino.setBounds(320, 125, 100, 30);
         txtdestino.setEditable(false);
 
-        bttninverter = new JButton("<->");
+        bttninverter = new JButton("<=>");
         bttninverter.setBounds(195, 65, 55, 30);
 
         // Ação do Botão Inverter
@@ -83,8 +78,8 @@ public class Comprimentos extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                String comprimentode = (String) comboBoxOrigem.getSelectedItem();
-                String comprimentopara = (String) comboBoxDestino.getSelectedItem();
+                String comprimentode = (String) opcoesOrigem.getSelectedItem();
+                String comprimentopara = (String) opcoesDestino.getSelectedItem();
 
                 double valorde = Double.parseDouble(txtorigem.getText());
                 double valorpara = 0;
@@ -147,8 +142,8 @@ public class Comprimentos extends JPanel {
         // Adiciona os itens no frame
         add(lblorigem);
         add(lbldestino);
-        add(comboBoxOrigem);
-        add(comboBoxDestino);
+        add(opcoesOrigem);
+        add(opcoesDestino);
         add(txtorigem);
         add(txtdestino);
         add(bttninverter);
@@ -158,9 +153,9 @@ public class Comprimentos extends JPanel {
 
     private void inverterOpcoes() {
 
-        int de = comboBoxOrigem.getSelectedIndex();
-        comboBoxOrigem.setSelectedIndex(comboBoxDestino.getSelectedIndex());
-        comboBoxDestino.setSelectedIndex(de);
+        int de = opcoesOrigem.getSelectedIndex();
+        opcoesOrigem.setSelectedIndex(opcoesDestino.getSelectedIndex());
+        opcoesDestino.setSelectedIndex(de);
 
     }
 
@@ -168,6 +163,5 @@ public class Comprimentos extends JPanel {
         txtorigem.setText("");
         txtdestino.setText("");
     }
-
 
 }

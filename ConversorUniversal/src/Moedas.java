@@ -1,25 +1,20 @@
+import javax.swing.*;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class Moedas extends JPanel {
 
     private JTextField txtorigem;
     private JTextField txtdestino;
-    private JComboBox<String> comboBoxOrigem;
-    private JComboBox<String> comboBoxDestino;
+    private JComboBox<String> opcoesOrigem;
+    private JComboBox<String> opcoesDestino;
     private JLabel lblorigem;
     private JLabel lbldestino;
     private JButton bttninverter;
     private JButton bttnconverter;
-    // private String nomemoedasorigem;
-    // private String nomemoedasdestino;
+    // private String moedasorigem;
+    // private String moedasdestino;
 
     public Moedas() {
 
@@ -31,21 +26,21 @@ public class Moedas extends JPanel {
 
         // Início Bloco JComboBox Moeda Origem
         setLayout(null);
-        String nomemoedasorigem [] = {"Reais","Dolares","Euros"};
+        String moedasorigem [] = {"Reais","Dolares","Euros"};
 
-        comboBoxOrigem = new JComboBox<String>(nomemoedasorigem);
-        comboBoxOrigem.setBounds(80, 65, 100, 30);
-        // comboBoxOrigem.setSelectedIndex(-1);
+        opcoesOrigem = new JComboBox<String>(moedasorigem);
+        opcoesOrigem.setBounds(80, 65, 100, 30);
+        // opcoesOrigem.setSelectedIndex(-1);
 
         // Fim Bloco JComboBox Moeda Origem
 
         // Início Bloco JComboBox Moeda Destino
 
-        String nomemoedasdestino [] = {"Reais","Dolares","Euros"};
+        String moedasdestino [] = {"Reais","Dolares","Euros"};
 
-        comboBoxDestino = new JComboBox<String>(nomemoedasdestino);
-        comboBoxDestino.setBounds(320, 65, 100, 30);
-        // comboBoxDestino.setSelectedIndex(-1);
+        opcoesDestino = new JComboBox<String>(moedasdestino);
+        opcoesDestino.setBounds(320, 65, 100, 30);
+        // opcoesDestino.setSelectedIndex(-1);
 
         // Fim Bloco JComboBox Moeda Destino
 
@@ -64,7 +59,7 @@ public class Moedas extends JPanel {
         txtdestino.setBounds(320, 125, 100, 30);
         txtdestino.setEditable(false);
 
-        bttninverter = new JButton("<->");
+        bttninverter = new JButton("<=>");
         bttninverter.setBounds(195, 65, 55, 30);
 
         // Ação do Botão Inverter
@@ -82,8 +77,8 @@ public class Moedas extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                String moedade = (String) comboBoxOrigem.getSelectedItem();
-                String moedapara = (String) comboBoxDestino.getSelectedItem();
+                String moedade = (String) opcoesOrigem.getSelectedItem();
+                String moedapara = (String) opcoesDestino.getSelectedItem();
 
                 double valorde = Double.parseDouble(txtorigem.getText());
                 double valorpara = 0;
@@ -122,8 +117,8 @@ public class Moedas extends JPanel {
         // Adiciona os itens no frame
         add(lblorigem);
         add(lbldestino);
-        add(comboBoxOrigem);
-        add(comboBoxDestino);
+        add(opcoesOrigem);
+        add(opcoesDestino);
         add(txtorigem);
         add(txtdestino);
         add(bttninverter);
@@ -133,9 +128,9 @@ public class Moedas extends JPanel {
 
     private void inverterOpcoes() {
 
-        int de = comboBoxOrigem.getSelectedIndex();
-        comboBoxOrigem.setSelectedIndex(comboBoxDestino.getSelectedIndex());
-        comboBoxDestino.setSelectedIndex(de);
+        int de = opcoesOrigem.getSelectedIndex();
+        opcoesOrigem.setSelectedIndex(opcoesDestino.getSelectedIndex());
+        opcoesDestino.setSelectedIndex(de);
 
     }
 
