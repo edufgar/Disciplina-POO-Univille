@@ -68,7 +68,7 @@ public class CadastroCarroView extends JFrame implements Observer{
 		anomodeloTextField = new JTextField(20);
 		
 		salvarButton = new JButton("Salvar");
-		salvarButton.setToolTipText("Salvar as alteraçoes");
+		salvarButton.setToolTipText("Salvar as alteraÃ§oes");
 		salvarButton.addActionListener(e -> salvar());
 		
 		cancelarButton = new JButton("Cancelar");
@@ -81,7 +81,7 @@ public class CadastroCarroView extends JFrame implements Observer{
 		deletarButton.addActionListener(e -> deletar());
 		
 		
-		JLabel l = new JLabel("C�digo",JLabel.RIGHT);
+		JLabel l = new JLabel("Código",JLabel.RIGHT);
 		l.setPreferredSize(new Dimension(60,16));
 		panel.add(l);
 		panel.add(codigoTextField);
@@ -169,6 +169,8 @@ public class CadastroCarroView extends JFrame implements Observer{
 		return corTextField.getText();
 	}
 	
+	
+	// Como converter texto para número
 	public int getAnomodelo() {
 		return anomodeloTextField.getText();
 	}
