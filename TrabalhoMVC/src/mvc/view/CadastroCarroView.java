@@ -33,8 +33,13 @@ public class CadastroCarroView extends JFrame implements Observer{
 	private JLabel statusLabel;
 	
 	public CadastroCarroView() {
-		setSize(400,280);
+		// Titulo Janela
 		setTitle("Cadastro de Carros");
+		// Tamanho Janela
+		setSize(400,280);
+		// Configura local inicial
+		setLocation(1366/2 -400/2, 768/2 - 280/2);
+		// Não permite modificar o tamanho da Tela
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		buildLayout();
@@ -57,7 +62,7 @@ public class CadastroCarroView extends JFrame implements Observer{
 		panel.setBorder(BorderFactory.createCompoundBorder(
 				
 				  BorderFactory.createEmptyBorder(20, 20, 0, 20)
-				, BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder("Detalhes da Pessoa")
+				, BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder("Detalhes do Carro")
 						,BorderFactory.createEmptyBorder(10, 10, 10, 10))));
 
 		codigoTextField = new JTextField(20);
@@ -68,7 +73,7 @@ public class CadastroCarroView extends JFrame implements Observer{
 		anomodeloTextField = new JTextField(20);
 		
 		salvarButton = new JButton("Salvar");
-		salvarButton.setToolTipText("Salvar as alteraÃƒÂ§oes");
+		salvarButton.setToolTipText("Salvar as alterações");
 		salvarButton.addActionListener(e -> salvar());
 		
 		cancelarButton = new JButton("Cancelar");
@@ -81,29 +86,29 @@ public class CadastroCarroView extends JFrame implements Observer{
 		deletarButton.addActionListener(e -> deletar());
 		
 		
-		JLabel l = new JLabel("CÃ³digo",JLabel.RIGHT);
-		l.setPreferredSize(new Dimension(60,16));
+		JLabel l = new JLabel("Código",JLabel.RIGHT);
+		l.setPreferredSize(new Dimension(70,16));
 		panel.add(l);
 		panel.add(codigoTextField);
 		
 		l = new JLabel("Marca",JLabel.RIGHT);
-		l.setPreferredSize(new Dimension(60,16));
+		l.setPreferredSize(new Dimension(70,16));
 		panel.add(l);
 		panel.add(marcaTextField);
 		l = new JLabel("Modelo",JLabel.RIGHT);
-		l.setPreferredSize(new Dimension(60,16));
+		l.setPreferredSize(new Dimension(70,16));
 		panel.add(l);
 		panel.add(modeloTextField);
 		l = new JLabel("Cor",JLabel.RIGHT);
-		l.setPreferredSize(new Dimension(60,16));
+		l.setPreferredSize(new Dimension(70,16));
 		panel.add(l);
 		panel.add(corTextField);
 		l = new JLabel("AnoModelo",JLabel.RIGHT);
-		l.setPreferredSize(new Dimension(60,16));
+		l.setPreferredSize(new Dimension(70,16));
 		panel.add(l);
 		panel.add(anomodeloTextField);
 		l = new JLabel();
-		l.setPreferredSize(new Dimension(60,16));
+		l.setPreferredSize(new Dimension(70,16));
 		panel.add(l);
 		panel.add(novoButton);
 		panel.add(salvarButton);
@@ -157,22 +162,23 @@ public class CadastroCarroView extends JFrame implements Observer{
 		exibirDados();
 	}
 	
-	public String getNome() {
+	public String getMarca() {
 		return marcaTextField.getText();
 	}
 	
-	public String getCpf() {
+	public String getModelo() {
 		return modeloTextField.getText();
 	}
 	
-	public String getEmail() {
+	public String getCor() {
 		return corTextField.getText();
 	}
 	
 	
-	// Como converter texto para nÃºmero
+	// Como converter texto para número
 	public int getAnomodelo() {
-		return anomodeloTextField.getText();
+		// return anomodeloTextField.getText();
+		return (int) Double.parseDouble(anomodeloTextField.getText());
 	}
 	
 }

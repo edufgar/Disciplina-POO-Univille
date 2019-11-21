@@ -34,9 +34,10 @@ public class CadastroCarroControl {
 	}
 	
 	public void salvar() {
-		model.setEmail(view.getEmail());
-		model.setCpf(view.getCpf());
-		model.setNome(view.getNome());
+		model.setMarca(view.getMarca());
+		model.setModelo(view.getModelo());
+		model.setCor(view.getCor());
+		model.setAnomodelo(view.getAnomodelo());
 		try {
 			model.salvar();
 			view.setMensagemStatusBar("Registro salvo com sucesso.");
