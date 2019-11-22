@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import jdbc.CarroDAO;
 import mvc.util.Observer;
 import mvc.util.Subject;
 
@@ -118,16 +119,23 @@ public class CarroModel implements  Subject{
 		//Novo registro
 		if(id == 0) {
 			// Gera um id
-			id = (new Random()).nextInt(100);
+			CarroDAO carrodao = new CarroDAO();	
+			carrodao.insert(this);
 			// insere no banco de dados
 		}else {
 			// Atualizar no banco de dados
+			CarroDAO carrodao = new CarroDAO();
+			carrodao.update(this);
 		}
 		notifyObservers();
 	}
 	
 	public void deletar() {
 		//deletar no banco de dados
+		
+		CarroDAO carrodao = new CarroDAO();	
+		carrodao.delete(this);
+		
 		novoRegistro();
 		notifyObservers();
 	}

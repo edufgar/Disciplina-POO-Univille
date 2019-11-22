@@ -78,10 +78,10 @@ public class CadastroCarroView extends JFrame implements Observer{
 		
 		cancelarButton = new JButton("Cancelar");
 		novoButton = new JButton("Novo");
-		novoButton.setToolTipText("Criar novo registro de pessoa");
+		novoButton.setToolTipText("Criar novo registro de Carro");
 		novoButton.addActionListener(e -> novo());
 		deletarButton = new JButton("Deletar");
-		deletarButton.setToolTipText("Excluir registro de pessoa");
+		deletarButton.setToolTipText("Excluir registro de Carro");
 		deletarButton.setEnabled(true);
 		deletarButton.addActionListener(e -> deletar());
 		
@@ -116,7 +116,7 @@ public class CadastroCarroView extends JFrame implements Observer{
 		
 		JPanel statusPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		statusPanel.setBorder(BorderFactory.createEmptyBorder(0, 15, 0, 10));
-		statusLabel = new JLabel("Cadastre um novo registro de pessoa");
+		statusLabel = new JLabel("Cadastre um novo registro de carro");
 		statusPanel.add(statusLabel);
 		
 		

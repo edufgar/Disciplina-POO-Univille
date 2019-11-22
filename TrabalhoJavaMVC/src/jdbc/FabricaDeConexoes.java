@@ -8,7 +8,7 @@ public class FabricaDeConexoes {
 	
 	private static FabricaDeConexoes instance;
 
-	private static String banco = "trabalhomvc";
+	private static String banco = "trabalhojavamvc";
 	private static String usuario = "root";
 	private static String senha = "univille";
 	

@@ -5,6 +5,7 @@ import mvc.model.CarroModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,12 +16,20 @@ public class CarroDAO extends BasicoDAO {
         String sql = " insert into carro(marca, modelo, cor, anomodelo) values(?,?,?,?)";
 
         try (Connection conn = getConnection();
-             PreparedStatement statement = conn.prepareStatement(sql)){
+             PreparedStatement statement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
             statement.setString(1, carro.getMarca());
             statement.setString(2, carro.getModelo());
             statement.setString(3, carro.getCor());
             statement.setInt(4, carro.getAnomodelo());
             statement.execute();
+            
+            ResultSet rs = statement.getGeneratedKeys();
+
+            if (rs.next()) {
+                long id = rs.getLong(1);
+                carro.setId(id);
+            }
+            
         }catch(Exception e) {
             e.printStackTrace();
         }
@@ -28,11 +37,11 @@ public class CarroDAO extends BasicoDAO {
 
     public void delete(CarroModel carro) {
 
-        String sql = " delete from carro where marca = ?";
+        String sql = " delete from carro where id = ?";
 
         try(Connection conn = getConnection();
             PreparedStatement statement = conn.prepareStatement(sql)) {
-            statement.setString(1, carro.getMarca());
+            statement.setLong(1, carro.getId());
             statement.execute();
         }catch(Exception e) {
             e.printStackTrace();
@@ -40,7 +49,7 @@ public class CarroDAO extends BasicoDAO {
     }
 
     public void update(CarroModel carro) {
-        String sql = " update carro set marca = ?, modelo = ?, ano = ?, anomodelo = ? where codigotarefa = ?";
+        String sql = " update carro set marca = ?, modelo = ?, cor = ?, anomodelo = ? where id = ?";
 
         try (Connection conn = getConnection();
              PreparedStatement statement = conn.prepareStatement(sql)){
@@ -48,6 +57,7 @@ public class CarroDAO extends BasicoDAO {
             statement.setString(2, carro.getModelo());
             statement.setString(3, carro.getCor());
             statement.setInt(4, carro.getAnomodelo());
+            statement.setLong(5, carro.getId());
             statement.execute();
         }catch(Exception e) {
             e.printStackTrace();
