@@ -39,7 +39,7 @@ public class CadastroCarroView extends JFrame implements Observer{
 		setSize(400,280);
 		// Configura local inicial
 		setLocation(1366/2 -400/2, 768/2 - 280/2);
-		// NÃ£o permite modificar o tamanho da Tela
+		// Não permite modificar o tamanho da Tela
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		buildLayout();
@@ -73,7 +73,7 @@ public class CadastroCarroView extends JFrame implements Observer{
 		anomodeloTextField = new JTextField(20);
 		
 		salvarButton = new JButton("Salvar");
-		salvarButton.setToolTipText("Salvar as alteraÃ§Ãµes");
+		salvarButton.setToolTipText("Salvar as alterações");
 		salvarButton.addActionListener(e -> salvar());
 		
 		cancelarButton = new JButton("Cancelar");
@@ -86,7 +86,7 @@ public class CadastroCarroView extends JFrame implements Observer{
 		deletarButton.addActionListener(e -> deletar());
 		
 		
-		JLabel l = new JLabel("CÃ³digo",JLabel.RIGHT);
+		JLabel l = new JLabel("Código",JLabel.RIGHT);
 		l.setPreferredSize(new Dimension(70,16));
 		panel.add(l);
 		panel.add(codigoTextField);
@@ -175,10 +175,10 @@ public class CadastroCarroView extends JFrame implements Observer{
 	}
 	
 	
-	// Como converter texto para nÃºmero
+	// Como converter texto para número
 	public int getAnomodelo() {
 		// return anomodeloTextField.getText();
-		return  Integer.parseInt(anomodeloTextField.getText());
+		return Integer.parseInt(anomodeloTextField.getText());
 	}
 	
 }
