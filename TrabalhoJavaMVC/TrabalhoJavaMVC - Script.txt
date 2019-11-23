@@ -2,7 +2,7 @@ create database trabalhojavamvc
 
 use trabalhojavamvc
 
-CREATE TABLE CarroModel (
+CREATE TABLE Carro (
 id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 marca varchar(50),
 modelo varchar(50),
